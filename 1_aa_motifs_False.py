@@ -44,9 +44,9 @@ for f in files_pdbs:
     header = '********************  ' + ff + '  ********************'
     file = open(f, 'r')
     data = file.readlines()
-    amino_acids_int_nb = [] # List containing hydrogen bonds of amino acid and nucloeotides.
+    amino_acids_int_nb = [] # List containing hydrogen bonds of amino acid and nucleotides.
     # Rearranging the format of writing hydrogen bonds of amino acids with nucleotides; 
-    # information of amino acid will be written first followed by nucleotides. 
+    # information of amino acids will be written first followed by nucleotides. 
     for l in range(len(data)):
             if data[l][5:9] in nucleotides and data[l][19:23] in all_amino_acids: 
                 p1 = data[l][:14]
@@ -58,8 +58,8 @@ for f in files_pdbs:
                 r = data[l][:33]
                 amino_acids_int_nb.append(r.strip())
     uq_interactions(amino_acids_int_nb)  # This will give unique interactions, i.e. will remove repetitions due to 
-                                         # to ambigous donors and acceptors.
-    aa_resi_uq = [] # List of amino acids intercting with nucleotides along with their residue numbers.
+                                         # to ambiguous donors and acceptors.
+    aa_resi_uq = [] # List of amino acids interacting with nucleotides along with their residue numbers.
     for a in amino_acids_int_nb:
         if a[:9].strip() not in aa_resi_uq:
             aa_resi_uq.append(a[:9].strip())
@@ -128,7 +128,7 @@ for f in files_pdbs:
 
             
     # Adding more information to the spanning motifs; i.e., whether cyclic or noncyclic.
-    # For this, hydrogen bonds of nucleotides involved in formation of spanning motifs will be searched
+    # For this, hydrogen bonds of nucleotides involved in the formation of spanning motifs will be searched
     my_dict = {}
     key = []
     val = []
