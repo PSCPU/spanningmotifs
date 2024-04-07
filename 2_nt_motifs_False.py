@@ -30,7 +30,7 @@ all_amino_acids = ['-GLY', '-ALA', '-SER', '-THR', '-CYS', '-VAL', '-LEU', '-ILE
 files_pdbs = []
 path = os.getcwd()
 directory = os.listdir(path)  # specify folder path.
-for fis in directory:             # fis is files in directory.
+for fis in directory:             # fis is files in the directory.
     if fis.find('.hb2') >= 0:
         files_pdbs.append(fis)
 files_pdbs.sort()
@@ -45,9 +45,9 @@ for f in files_pdbs:
     #print(t_c, '  ', f )
     file = open(f, 'r')
     data = file.readlines()
-    amino_acids_int_nb = [] # List containing hydrogen bonds of amino acid and nucloeotides.
+    amino_acids_int_nb = [] # List containing hydrogen bonds of amino acid and nucleotides.
     # Rearranging the format of writing hydrogen bonds of nucleotides with amino acids; 
-    # information of nucleotide will be written first followed by amino acids. 
+    # information of nucleotides will be written first followed by amino acids. 
     for l in range(len(data)):
             if data[l][5:9] in nucleotides and data[l][19:23] in all_amino_acids:
                 r = data[l][:33]
@@ -59,8 +59,8 @@ for f in files_pdbs:
                 r = p2 + p1 + p3
                 amino_acids_int_nb.append(r.strip())
     uq_interactions(amino_acids_int_nb)  # This will give unique interactions, i.e. will remove repetitions due to 
-                                         # to ambigous donors and acceptors.
-    aa_resi_uq = [] # List of nucleotides intercting with amino acids along with their residue numbers.
+                                         # to ambiguous donors and acceptors.
+    aa_resi_uq = [] # List of nucleotides interacting with amino acids along with their residue numbers.
     for a in amino_acids_int_nb:
         if a[:9].strip() not in aa_resi_uq:
             aa_resi_uq.append(a[:9].strip())
@@ -76,7 +76,7 @@ for f in files_pdbs:
     
     
     # Here 'element' is information of nucleotide, and 'group' is all interaction of that nucleotide. 
-    # Making a list by grouping all interacting amino acids with particualar nucleotide.
+    # Making a list by grouping all interacting amino acids with particular nucleotides.
     for element, group in iterator:
        # appending the group by converting it into a list
        result.append(list(group))
@@ -90,7 +90,7 @@ for f in files_pdbs:
         res = len(re.findall('GLY|ALA|SER|THR|CYS|VAL|LEU|ILE|MET|PRO|PHE|TYR|TRP|ASP|GLU|ASN|GLN|HIS|LYS|ARG', i))
         if res > 1 : triplets.append(i)
             
-    ## Remvoe those false spanning motifs, which include only one amino acid, i.e. nucleotide interacts only 
+    ## Remove those false spanning motifs, which include only one amino acid, i.e. nucleotide interacts only 
     # with single amino acid, but multiple times.
     to_be_removed = []
     for t in triplets:
@@ -110,10 +110,10 @@ for f in files_pdbs:
   
     
     # Searcing amino acid - amino acid interactions ... 
-    # i) create a list containing all amino acid - amino acid  hydrogen bonds. 
-    #    There repition of interactions due to atoms capable of acting as acceptor as well donors.
+    # i) Create a list containing all amino acid - amino acid  hydrogen bonds. 
+    #    There repetition of interactions due to atoms capable of acting as acceptors as well as donors.
     # ii) Rearange r1 = p1 + p2 + p3 to r2 = p2 + p1 + p3. 
-    # iii) append all r1 to AA_AA, and if r2 is in AA_AA, aAA_AA it to another list and the remove this extra list fron AA_AA.
+    # iii) append all r1 to AA_AA, and if r2 is in AA_AA, aAA_AA it to another list and then remove this extra list from AA_AA.
     AA_AA = [] # List of amino acid - amino acid  hydrogen bonds. 
     repetitive_AA = []
     for l in range(len(data)):
@@ -133,7 +133,7 @@ for f in files_pdbs:
         if l in AA_AA:AA_AA.remove(l)
             
     # Adding more information to the spanning motifs; i.e., whether cyclic or noncyclic.
-    # For this, hydrogen bonds of amino acids involved in formation of spanning motifs will be searched            
+    # For this, hydrogen bonds of amino acids involved in the formation of spanning motifs will be searched            
     my_dict = {}
     key = []
     val = []
