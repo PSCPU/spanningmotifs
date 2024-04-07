@@ -1,15 +1,15 @@
 ###########################################################################################################################
 #                                          Identification of spanning motifs - 3                                          #
 ###########################################################################################################################
-# The previous two scripts search for amino acid- and nucleotide- mediated motifs. But there are many cases where same amino
-# acids or nucleotides appears in both amino acid- and nucleotide- mediated motifs. That means these a not spanning motifs
-# but are part of some extended netwrok of hydrogen bonded amino acids and nucleotides. Our study is focused only on
-# spanning motifs, so we have to remove such large networks and can be analysed later.
+# The previous two scripts search for amino acid- and nucleotide- mediated motifs. But there are many cases where the same amino
+# acids or nucleotides appear in both amino acid- and nucleotide- mediated motifs. That means these a not spanning motifs
+# but are part of some extended network of hydrogen-bonded amino acids and nucleotides. Our study is focused only on
+# spanning motifs, so we have to remove such large networks which can be analyzed later.
 
 # Importing the required modules
 import os
 
-# A. To separate flase amino acid-mediated spanning motifs.
+# A. To separate false amino acid-mediated spanning motifs.
 output1 = open('aa_motifs_False.txt', 'r') # Reads output of script "1_aa_motifs_False.py".
 data = output1.readlines()
 dict_of_pdbs_A1N2 = {}
@@ -90,7 +90,7 @@ for i in new_dict2:
 
     
 ######################################################################################################
-# B. To separate flase nucleotide-mediated spanning motifs.
+# B. To separate false nucleotide-mediated spanning motifs.
 
 output1 = open('aa_motifs_False.txt', 'r') # Reads output of script "1_aa_motifs_False.py".
 data = output1.readlines()
