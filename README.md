@@ -1,10 +1,16 @@
 # Spanning Motif Identifier for RNA–Protein Complexes
 
-A Python-based pipeline to identify and classify **spanning motifs** in RNA–protein complexes using hydrogen bond data.
+A Python-based tool to identify and classify **spanning motifs** in RNA–protein complexes using hydrogen bond data and corresponding PDB structures.
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 ## Overview
 
-This toolkit processes hydrogen bond data (`.hb2` files from HBPLUS) and PDB structures to extract amino acid and nucleotide-centered spanning motifs, filter out false positives, and classify the valid motifs by topology.
+Spanning triplets comprise a single amino acid hydrogen bonded with two ribonucleotides (not mutually involved in a Watson–Crick base pair), or vice versa. With their high specificity, these motifs can aid in a better understanding of RNA–protein recognition and associated phenomena. To achieve this, we developed a Python algorithm that provides a topology-based classification and nomenclature scheme to automatically identify spanning triplet motifs in the crystal structures of RNA–protein complexes. This technique can also be extended to include higher-order spanning motifs.
+
+This pipeline processes `.hb2` files (from HBPLUS) along with PDB files to:
+- Extract amino acid and nucleotide-centered spanning motifs
+- Filter out false motifs
+- Classify motifs based on topological features
 
 ## Requirements
 
