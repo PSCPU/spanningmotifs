@@ -46,8 +46,11 @@ Place the scripts in a single folder along with:
 -   python3 `5_topologies- nucleotide centered spanning  motifs.py`  
     (These scripts classify the previously identified spanning motifs and generate a separate output file for each topology.)
 
-## Dataset
+## Sample output
+<img src="sample output.png" alt="Sample" width="900" />
 
+## Dataset
+RNA–protein complexes elucidated at 2.5 Å or better X-ray resolution available at the Protein Data Bank (PDB) released on or before 6th June 2023. To remove redundancy, complexes with over 30% sequence identity were filtered out using the [CDHIT suite](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3516142/), resulting in a final nonredundant dataset of 359 crystal structures, which were processed using [Phenix](https://phenix-online.org/) to eliminate alternate atomic locations with smaller occupancy values.
 
 ## Contact
 
