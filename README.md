@@ -34,17 +34,27 @@ Place the scripts in a single folder along with:
 - `.hb2` files
 - Corresponding `.pdb` files
 
-### Step 1: Generate Motifs
 
-Run   
+**Run**   
   -  python3 `1_aa_motifs_False.py`
   -  python3 `2_nt_motifs_False.py`  
      (These scripts will generate spanning motifs and some extended network of hydrogen-bonded amino acids and nucleotides (if found). The name of their output file will 
       be ‘aa_motifs_False.txt’ and ‘nt_motifs_False.txt’ respectively.)     
   -  python3 `3_Remove_fasle_spanning_motifs.py`     
      (It will separate spinning motifs and other extended networks of amino acids and nucleotides. Here, a maximum of four output files will be generated: ‘AA_spanningmotifs.txt’, ‘NT_spanningmotifs.txt’, ‘Extended_networks_1.txt’, and ‘Extended_networks_2.txt’.)
--   python3 `4_topologies- amino acid centered spanning motifs.py`
--   python3 `5_topologies- nucleotide centered spanning  motifs.py`
-     
+-   python3 `4_topologies- amino acid centered spanning motifs.py`   
+-   python3 `5_topologies- nucleotide centered spanning  motifs.py`  
+    (These scripts classify the previously identified spanning motifs and generate a separate output file for each topology.)
+
+## Dataset
+
+
+## Contact
+
+For queries or support, please feel free to contact us:
+
+- **Dr. Purshotam Sharma**: [psharmapuchd@gmail.com](mailto:psharmapuchd@gmail.com)
+
+    
 
 
