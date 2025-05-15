@@ -1,6 +1,7 @@
 # Spanning Motif Identifier for RNA–Protein Complexes
 
 A Python-based tool to identify and classify **spanning motifs** in RNA–protein complexes using hydrogen bond data and corresponding PDB structures.
+
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 ## Overview
